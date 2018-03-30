@@ -1,11 +1,11 @@
 // Business logic.
 
-// Function takes integer as a parameter and returns string.
-var beepOrBoop = function(number) {
+// Function takes an integer and a string as a parameter and returns string.
+var beepOrBoop = function(number, name) {
   var result = "";
   for (var i = 0; i <= number; i++) {
     if (i % 3 === 0 && i != 0) {
-      result = result.concat("I'm sorry, Dave. I'm afraid I can't do that. ");
+      result = result.concat("I'm sorry, " + name + ". I'm afraid I can't do that. ");
       continue;
     }
     if (i.toString().includes("1")){
@@ -23,11 +23,11 @@ var beepOrBoop = function(number) {
 };
 
 // The same function with reversed output.
-var beepOrBoopReverse = function(number) {
+var beepOrBoopReverse = function(number, name) {
   var result = "";
   for (var i = number; i >= 0; i--) {
     if (i % 3 === 0 && i != 0) {
-      result = result.concat("I'm sorry, Dave. I'm afraid I can't do that. ");
+      result = result.concat("I'm sorry, " + name + ". I'm afraid I can't do that. ");
       continue;
     }
     if (i.toString().includes("1")){
@@ -56,19 +56,22 @@ $(document).ready(function() {
     event.preventDefault();
     $(".output").hide();
     var userInput = $("#number").val();
+    var userName = $("#name").val();
     var order = $("input:radio[name=order]:checked").val();
 
     var validInput = validate(userInput);
 
     if (!validInput) {
       alert("Please enter an integer number!");
+    } else if (!userName) {
+        alert("Please enter your name!");
     } else {
         if (order === "1") {
-          var output = beepOrBoop(parseInt(userInput));
+          var output = beepOrBoop(parseInt(userInput), userName);
           $(".result").text(output);
           $(".output").show();
         } else if (order === "2") {
-            var output = beepOrBoopReverse(parseInt(userInput));
+            var output = beepOrBoopReverse(parseInt(userInput), userName);
             $(".result").text(output);
             $(".output").show();
       }
