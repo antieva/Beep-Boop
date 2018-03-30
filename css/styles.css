@@ -1,21 +1,32 @@
+body {
+  color: #3a3d3d;
+}
 .output {
   display: none;
   margin-top: 20px;
-  margin-left: 25%;
+  margin-left: 5%;
   font-weight: bold;
 }
 .jumbotron {
   text-align: center;
-  background-color: #ffe5cc;
+  color: white;
+  height: 300px;
+  background-image: url(../img/img1.jpg);
+}
+h1 {
+  padding-top: 55px;
 }
 input#number {
   width: 30%;
 }
-form#userInput{
-  margin-left: 25%;
+form#userInput {
+  margin-left: 5%;
   font-size: 13pt;
 }
 .result {
   font-size: 15pt;
+}
 
+#outputHeading {
+  font-size: 13pt;
 }
