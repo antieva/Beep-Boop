@@ -56,16 +56,22 @@ $(document).ready(function() {
     event.preventDefault();
     $(".output").hide();
     var userInput = $("#number").val();
+    var order = $("input:radio[name=order]:checked").val();
 
     var validInput = validate(userInput);
 
     if (!validInput) {
       alert("Please enter an integer number!");
     } else {
-      var output = beepOrBoopReverse(parseInt(userInput));
-      $(".result").text(output);
-
-      $(".output").show();
+        if (order === "1") {
+          var output = beepOrBoop(parseInt(userInput));
+          $(".result").text(output);
+          $(".output").show();
+        } else if (order === "2") {
+            var output = beepOrBoopReverse(parseInt(userInput));
+            $(".result").text(output);
+            $(".output").show();
+      }
     }
   });
 });

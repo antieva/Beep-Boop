@@ -46,3 +46,6 @@ footer {
    display: inline;
    margin: 0 80px;
  }
+ span.bold {
+   font-weight: bold;
+ }
