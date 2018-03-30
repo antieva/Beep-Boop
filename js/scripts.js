@@ -8,17 +8,36 @@ var beepOrBoop = function(number) {
       result = result.concat("I'm sorry, Dave. I'm afraid I can't do that. ");
       continue;
     }
-
     if (i.toString().includes("1")){
       result = result.concat("Boop! ");
       continue;
     }
-
     if (i.toString().includes("0")) {
       result = result.concat("Beep! ");
       continue;
     }
+    result += i.toString();
+    result = result.concat(". ");
+  }
+  return result;
+};
 
+// The same function with reversed output.
+var beepOrBoopReverse = function(number) {
+  var result = "";
+  for (var i = number; i >= 0; i--) {
+    if (i % 3 === 0 && i != 0) {
+      result = result.concat("I'm sorry, Dave. I'm afraid I can't do that. ");
+      continue;
+    }
+    if (i.toString().includes("1")){
+      result = result.concat("Boop! ");
+      continue;
+    }
+    if (i.toString().includes("0")) {
+      result = result.concat("Beep! ");
+      continue;
+    }
     result += i.toString();
     result = result.concat(". ");
   }
@@ -43,7 +62,7 @@ $(document).ready(function() {
     if (!validInput) {
       alert("Please enter an integer number!");
     } else {
-      var output = beepOrBoop(parseInt(userInput));
+      var output = beepOrBoopReverse(parseInt(userInput));
       $(".result").text(output);
 
       $(".output").show();

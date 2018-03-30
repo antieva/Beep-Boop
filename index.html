@@ -11,21 +11,46 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h1>Beep Boop Converter</h1>
+        <h1><span class="capitalize">beep boop converter</span></h1>
       </div>
-      <form id="userInput">
-        <div class="form-group">
-         <label for="number">Please enter an integer number</label>
-         <input id="number" class="form-control" type="text">
-       </div>
 
-       <button type="submit" class="btn btn-info">Submit</button>
-      </form>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <form id="userInput">
+              <div class="form-group">
+               <label for="number">Please enter an integer number</label>
+               <input id="number" class="form-control" type="text">
+             </div>
+
+             <button type="submit" class="btn btn-info">Submit</button>
+            </form>
+          </div>
+          <div class="col-md-6">
+            <h3>What exactly <span class="capitalize">beep boop converter</span> does?</h3>
+            <p>Converter takes a number from a user and returns a range of numbers from 0 to the chosen number with the following exceptions:</p>
+            <ul>
+              <li>Numbers divisible by 3 are replaced with "I'm sorry, Dave. I'm afraid I can't do that."</li>
+              <li>Numbers that contain a 1 are replaced (all digits) with "Boop!"</li>
+              <li>Numbers that contain a 0 are replaced (all digits) with "Beep!"</li>
+            </ul>
+            <p>Have fun!</p>
+          </div>
+        </div>
+      </div>
 
       <div class="output">
         <p id="outputHeading">Beep Boop convertion: <br>
         <br><span class="result"></span></p>
       </div>
+
+      <footer>
+        <ul>
+          <li>Posted by: Eva Antipina</li>
+          <li>Contact information: <a href="mailto:eva.antipina@gmail.com">
+         eva.antipina@gmail.com</a>.</li>
+        </ul>
+      </footer>
     </div>
   </body>
 </html>
