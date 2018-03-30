@@ -1,0 +1,21 @@
+.output {
+  display: none;
+  margin-top: 20px;
+  margin-left: 25%;
+  font-weight: bold;
+}
+.jumbotron {
+  text-align: center;
+  background-color: #ffe5cc;
+}
+input#number {
+  width: 30%;
+}
+form#userInput{
+  margin-left: 25%;
+  font-size: 13pt;
+}
+.result {
+  font-size: 15pt;
+
+}
