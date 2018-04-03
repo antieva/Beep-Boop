@@ -1,48 +1,37 @@
 // Business logic.
 
-// Function takes an integer and a string as a parameter and returns string.
-var beepOrBoop = function(number, name) {
+// Function takes integer and a string and returns a string
+var stringWriter = function(num, name) {
   var result = "";
-  for (var i = 0; i <= number; i++) {
-    if (i % 3 === 0 && i != 0) {
-      result = result.concat("I'm sorry, " + name + ". I'm afraid I can't do that. ");
-      continue;
-    }
-    if (i.toString().includes("1")){
-      result = result.concat("Boop! ");
-      continue;
-    }
-    if (i.toString().includes("0")) {
-      result = result.concat("Beep! ");
-      continue;
-    }
-    result += i.toString();
+  if (num % 3 === 0 && num != 0) {
+    result = "I'm sorry, " + name + ". I'm afraid I can't do that. ";
+  } else if (num.toString().includes("1")){
+    result = "Boop! ";
+  } else if (num.toString().includes("0")) {
+    result = "Beep! ";
+  } else {
+    result += num.toString();
     result = result.concat(". ");
   }
   return result;
 };
 
-// The same function with reversed output.
-var beepOrBoopReverse = function(number, name) {
+// Function takes two integers and a string as parameters and returns a string.
+var beepOrBoop = function(startNumber,endNumber, name) {
   var result = "";
-  for (var i = number; i >= 0; i--) {
-    if (i % 3 === 0 && i != 0) {
-      result = result.concat("I'm sorry, " + name + ". I'm afraid I can't do that. ");
-      continue;
+  if (startNumber < endNumber){
+    for (var i = startNumber; i <= endNumber; i++) {
+      result += stringWriter(i, name);
     }
-    if (i.toString().includes("1")){
-      result = result.concat("Boop! ");
-      continue;
+    return result;
+  } else {
+    for (var i = startNumber; i >= endNumber; i--) {
+      result += stringWriter(i, name);
     }
-    if (i.toString().includes("0")) {
-      result = result.concat("Beep! ");
-      continue;
-    }
-    result += i.toString();
-    result = result.concat(". ");
   }
   return result;
 };
+
 
 // Function to check if the given string is numerical.
 var validate = function(string) {
@@ -67,11 +56,11 @@ $(document).ready(function() {
         alert("Please enter your name!");
     } else {
         if (order === "1") {
-          var output = beepOrBoop(parseInt(userInput), userName);
+          var output = beepOrBoop(0, parseInt(userInput), userName);
           $(".result").text(output);
           $(".output").show();
-        } else if (order === "2") {
-            var output = beepOrBoopReverse(parseInt(userInput), userName);
+        } else {
+            var output = beepOrBoop(parseInt(userInput),0, userName);
             $(".result").text(output);
             $(".output").show();
       }
